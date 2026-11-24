@@ -8,11 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("*.vac")
-public class VaccinContloller extends HttpServlet {
+public class VaccinController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public VaccinContloller() {
+    public VaccinController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -25,7 +25,7 @@ public class VaccinContloller extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF=8");
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
 
