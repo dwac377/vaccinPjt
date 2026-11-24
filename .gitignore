@@ -1,0 +1,41 @@
+
+# Java 컴파일 결과물
+/build/
+/bin/
+/target/
+*.class
+
+# Eclipse 작업 환경 임시 파일
+.metadata/
+
+# 로그 및 임시 파일
+*.log
+*.tmp
+*.bak
+*~
+
+# 운영체제 생성 파일
+.DS_Store
+Thumbs.db
+
+# Eclipse 로컬 설정 중 공유 불필요한 파일
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.wst.server.core.prefs
+
+# IDE 임시 파일
+*.launch
+
+
+# Eclipse 서버 작업 환경
+/Servers/
+.metadata/
+
+# Tomcat 설치 및 실행 파일
+/apache-tomcat-*/
+/tomcat/
+
+# 서버 실행 중 생성되는 파일
+/logs/
+/temp/
+/work/
+
