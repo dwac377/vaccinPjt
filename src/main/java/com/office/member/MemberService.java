@@ -1,5 +1,66 @@
 package com.office.member;
 
-public class MemberService {
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
+public class MemberService {
+	
+	
+//	생성한 DAO의 객체가 변하지 않도록 상수로 만들어 놓기 -> 제어의 역전
+	final private MemberDao memberDao;
+	
+	public MemberService(MemberDao memberDao) {
+		this.memberDao = memberDao;
+		
+	}
+
+	public int signupConfirm(HttpServletRequest request, HttpServletResponse response) {
+		
+//		1, ID 중복 확인
+		String admin_id = request.getParameter("admin_id");
+		String admin_pw = request.getParameter("admin_pw");
+		String admin_mail = request.getParameter("admin_mail");
+		String admin_phone = request.getParameter("admin_phone");
+		
+		boolean isMember = memberDao.isMember(admin_id);
+		int result = 0;
+		
+//		2. 회원 가입
+		if (!isMember) {
+			result = memberDao.insertNewMember(
+					new MemberDto(admin_id, admin_pw, admin_mail, admin_phone));
+			
+			if(result > 0) {
+				System.out.println("[MemberService]회원가입 성공");
+				
+			} else {
+				System.out.println("[MemberService]회원가입 실패");
+			}
+			
+		} else {
+			result = 0;
+			
+		}
+		
+		return result;
+	}
+
+	public String signinConfirm(HttpServletRequest request, HttpServletResponse response) {
+		String admin_id = request.getParameter("admin_id");
+		String admin_pw = request.getParameter("admin_pw");
+		
+		MemberDto selectedMemberDto = MemberDao.selectMemberByAdminId(admin_id);
+		
+		if (selectedMemberDto != null && selectedMemberDto.getAdmin_pw().equals(admin_pw)) {
+			
+				System.out.println("[MemberService] 로그인 성공");
+				return admin_id;
+				
+			}
+		
+		return null;
+			
+		
+	}
+		
 }
