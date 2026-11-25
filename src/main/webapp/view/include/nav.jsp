@@ -10,9 +10,9 @@
 			<a href="<%= request.getContextPath()%>/">홈</a>
 			&nbsp;&nbsp; | &nbsp;&nbsp;
 			
-			<a href="<%= request.getContextPath()%>/signin_fome.mem">로그인</a>
+			<a href="<%= request.getContextPath()%>/signin_form.mem">로그인</a>
 			&nbsp;&nbsp; | &nbsp;&nbsp;
-			<a href="<%= request.getContextPath()%>/signup_fome.mem">회원 가입</a>
+			<a href="<%= request.getContextPath()%>/signup_form.mem">회원 가입</a>
 			&nbsp;&nbsp; | &nbsp;&nbsp;
 			
 			<a href="<%= request.getContextPath()%>/signout_confirm.mem">로그 아웃</a>

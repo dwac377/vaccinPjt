@@ -1,5 +1,7 @@
 package com.office.member;
 
+import jakarta.security.auth.message.callback.PrivateKeyCallback.Request;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,11 +23,38 @@ public class MemberController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String requestURI = request.getRequestURI();
+		String contextPath = request.getContextPath();
+		String command = requestURI.substring(contextPath.length());
+		
+		MemberService memberService = null;
+		String nextPage = null;
+		switch(command) {
+		
+		case "/signup_form.mem" :
+			
+			nextPage = generateView("signup_form");
+		
+			break;
+			
+		case "/signup_confirm.mem" :
+		}
+		
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
+		dispatcher.forward(request, response);
+		
+		
 	}
 
 
-	
+	private String generateView(String viewName) {
+		
+		String view = "view/member/" + viewName + ".jsp";
+		
+		return view;
+		
+	}
 	
 	
 	
