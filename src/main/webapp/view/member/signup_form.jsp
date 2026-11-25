@@ -4,8 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <jsp:include page="../include/title.jsp"></jsp:include>
 <link rel="stylesheet" href="./res/css/member/member.css" type="text/css">
+<jsp:include page="../include/js/member.jsp"></jsp:include>
+
 </head>
 <body>
 	
@@ -28,11 +31,13 @@
 				<br>
 				<input class="basic" type="password" name="admin_pw" placeholder="새 관리자 비밀번호">
 				<br>
+				<input class="basic" type="password" name="admin_pw_again" placeholder="새 관리자 비밀번호 확인">
+				<br>
 				<input class="basic" type="email" name="admin_mail" placeholder="새 관리자 이메일">
 				<br>
 				<input class="basic" type="text" name="admin_phone" placeholder="새 관리자 전화번호">
 				<br>
-				<input type="button" value="회원 가입">
+				<input type="button" value="회원 가입" onclick="signupForm()">
 				<input type="reset" value="초기화">
 				
 
