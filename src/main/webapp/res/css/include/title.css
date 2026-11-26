@@ -62,3 +62,19 @@ li {
 
 }
 
+
+.basic_select {
+	width: 368px;
+	padding: 8px 7px;
+	margin: 2px;
+	outline: none;
+	border: 1px solid #dadada;
+	border-radius: 5px;
+	text-align: center;
+	font-size: medium;
+}
+
+.basic_select:focus {
+	background-color: rgba(0,0,255, .1);
+}
+
