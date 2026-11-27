@@ -52,7 +52,22 @@ public class VaccinController extends HttpServlet {
 			
 			break;
 			
+		case "/injection_modify.vac" :
+			
+			vaccinService = new VaccinService(new VaccinDao());
+			vaccinService.selectVaccinDto(request, response);
+			
+			nextPage = generateView("medify_form");
+			
+			break;
+			
 		}
+		
+
+			
+			
+			
+			
 	
 		
 		
