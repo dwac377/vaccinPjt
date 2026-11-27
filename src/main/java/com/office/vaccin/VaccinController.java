@@ -34,7 +34,7 @@ public class VaccinController extends HttpServlet {
 			
 			break;
 		
-		case "/injection_registe_confurm.vac":
+		case "/injection_registe_confirm.vac":
 			
 			vaccinService = new VaccinService(new VaccinDao());
 			int resultForRegist = vaccinService.registeConfirm(request, response);
@@ -57,7 +57,16 @@ public class VaccinController extends HttpServlet {
 			vaccinService = new VaccinService(new VaccinDao());
 			vaccinService.selectVaccinDto(request, response);
 			
-			nextPage = generateView("medify_form");
+			nextPage = generateView("modify_form");
+			
+			break;
+			
+		case "/injection_modify_confirm.vac" :
+			
+			vaccinService = new VaccinService(new VaccinDao());
+			int modify = vaccinService.modify(request, response);
+			
+			nextPage = generateView("modify_result");
 			
 			break;
 			

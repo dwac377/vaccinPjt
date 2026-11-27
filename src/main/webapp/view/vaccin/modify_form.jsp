@@ -30,24 +30,30 @@
 				method="post" 
 				name="modify_form">
 
+				<input type="hidden" name="fvp_no" value="${selectedVaccinDto.fvp_no}">
+
 				<input class="basic_input" type="text" name="fvp_name" value="${selectedVaccinDto.fvp_name}" placeholder="예약자 성명을 입력하시오">
 				<br>
 				<select class="basic_select" name="ss_number" id="">
 					<option value="">---선택---</option>
 					<option value="720520-1018547"
-						<c:if test="${selectedVaccinDto.ss_number eq '720520-1018547'}">선택하기</c:if>
+						<c:if test="${selectedVaccinDto.ss_number eq '720520-1018547'}">selected</c:if>
 					>720520-1******</option>
+
 					<option value="710210-2084561"
-						<c:if test="${selectedVaccinDto.ss_number eq '710210-2084561'}">선택하기</c:if>
+						<c:if test="${selectedVaccinDto.ss_number eq '710210-2084561'}">selected</c:if>
 					>710210-2******</option>
+
 					<option value="941230-1075214"
-						<c:if test="${selectedVaccinDto.ss_number eq '941230-1075214'}">선택하기</c:if>
+						<c:if test="${selectedVaccinDto.ss_number eq '941230-1075214'}">selected</c:if>
 					>941230-1******</option>
+
 					<option value="650215-2050128"
-						<c:if test="${selectedVaccinDto.ss_number eq '650215-2050128'}">선택하기</c:if>
+						<c:if test="${selectedVaccinDto.ss_number eq '650215-2050128'}">selected</c:if>
 					>650215-2******</option>
+
 					<option value="800710-1025698"
-						<c:if test="${selectedVaccinDto.ss_number eq '800710-1025698'}">선택하기</c:if>
+						<c:if test="${selectedVaccinDto.ss_number eq '800710-1025698'}">selected</c:if>
 					>800710-1******</option>
 
 				</select>
@@ -59,20 +65,40 @@
 
 				<select class="basic_select" name="fv_location_no" id="">
 					<option value="">---선택---</option>
-					<option value="1001">A 접종처</option>
-					<option value="1002">B 접종처</option>
-					<option value="1003">C 접종처</option>
-					<option value="1004">D 접종처</option>
-					<option value="1005">E 접종처</option>
+					<option value="1001"
+						<c:if test="${selectedVaccinDto.fv_location_no eq '1001'}">selected</c:if>
+					>A 접종처</option>
+					<option value="1002"
+						<c:if test="${selectedVaccinDto.fv_location_no eq '1002'}">selected</c:if>
+					>B 접종처</option>
+					<option value="1003"
+						<c:if test="${selectedVaccinDto.fv_location_no eq '1003'}">selected</c:if>
+					>C 접종처</option>
+					<option value="1004"
+						<c:if test="${selectedVaccinDto.fv_location_no eq '1004'}">selected</c:if>
+					>D 접종처</option>
+					<option value="1005"
+						<c:if test="${selectedVaccinDto.fv_location_no eq '1005'}">selected</c:if>
+					>E 접종처</option>
 				</select>
 				<br>
 				<select class="basic_select" name="fv_type" id="">
 					<option value="">---선택---</option>
-					<option value="A">A 타입</option>
-					<option value="B">B 타입</option>
-					<option value="C">C 타입</option>
-					<option value="D">D 타입</option>
-					<option value="E">E 타입</option>
+					<option value="A"
+						<c:if test="${selectedVaccinDto.fv_type eq 'A'}">selected</c:if>
+					>A 타입</option>
+					<option value="B"
+						<c:if test="${selectedVaccinDto.fv_type eq 'B'}">selected</c:if>
+					>B 타입</option>
+					<option value="C"
+						<c:if test="${selectedVaccinDto.fv_type eq 'C'}">selected</c:if>
+					>C 타입</option>
+					<option value="D"
+						<c:if test="${selectedVaccinDto.fv_type eq 'D'}">selected</c:if>
+					>D 타입</option>
+					<option value="E"
+						<c:if test="${selectedVaccinDto.fv_type eq 'E'}">selected</c:if>
+					>E 타입</option>
 
 				</select>
 				<br>
